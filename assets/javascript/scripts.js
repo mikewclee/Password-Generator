@@ -1,5 +1,6 @@
-// Assignment Code to associate the generate id with the button
-var generateButton = document.querySelector("#generate");
+// Assignment Codeto associate the generate id with the button
+var generateButton = document.querySelector("#generate").addEventListener("click", publishPassword);
+
 
 // function to publish password from function generatePassword
 function publishPassword() {
@@ -34,13 +35,13 @@ function generatePassword() {
     // THEN my input should be validated and at least one character type should be selected
     while (confirmLowers === false && confirmUppers === false && confirmNumerics === false && confirmSpecials === false) {
         alert("Must choose at lease one parameter");
-        var confirmLowers = confirm("Click OK to include lower case characters in password.");
-        var confirmUppers = confirm("Click OK to include upper case characters in password.");
-        var confirmNumerics = confirm("Click OK to include numerical characters in password.");
-        var confirmSpecials = confirm("Click OK to include special characters in password.");
+        confirmLowers = confirm("Click OK to include lower case characters in password.");
+        confirmUppers = confirm("Click OK to include upper case characters in password.");
+        confirmNumerics = confirm("Click OK to include numerical characters in password.");
+        confirmSpecials = confirm("Click OK to include special characters in password.");
     }
 
-    // build password string depending on user input
+    // build password string depending on user input-
     var passwordStr = '';
 
     if (confirmLowers == true) {
@@ -75,6 +76,13 @@ function generatePassword() {
     // document.getElementById("password").value = finalPassword;
 }
 
-// Add event listener to generate button
-generateButton.addEventListener("click", publishPassword);
+// copy password to clipboard function 
+function copyPassword() {
+    var copyText = document.querySelector("#password");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Copied password to Clipboard:  " + copyText.value);
+}
+
+var copyButton = document.querySelector("#copy").addEventListener("click", copyPassword);
 
