@@ -4,6 +4,8 @@ This application generates a random password based on below user-selected criter
 * length of at least 8 characters and no more than 128 characters
 * lowercase, uppercase, numeric, and/or special characters
 
+Deployed link:https://mikewclee.github.io/Password-Generator/
+
 The app will run in the browser and feature dynamically updated HTML and CSS powered JavaScript code. It also feature a clean, polished, and responsive user interface that adapts to multiple screen sizes.
 
 When user clicks the "Generate Password" button, they are prompt for a password length of range of 8 to 128 characters.  There's a while loop that checks and required the password length between 8 to 128 characters. 
